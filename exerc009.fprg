@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Gabriel.Lopes"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-01-31 10:01:10 "/>
+        <attribute name="created" value="R2FicmllbC5Mb3BlcztERVNLVE9QLTZMOUFPQVM7MjAyNC0wMS0zMTsiMDc6NTk6MTAgIjszNTA3"/>
+        <attribute name="edited" value="R2FicmllbC5Mb3BlcztERVNLVE9QLTZMOUFPQVM7MjAyNC0wMS0zMTsiMDg6MDg6MDMgIjsyO0dhYnJpZWwuTG9wZXM7REVTS1RPUC02TDlBT0FTOzIwMjQtMDEtMjk7IjA4OjI1OjM0ICI7ZXhlcmMwMDYuZnByZzs4NDA3"/>
+        <attribute name="edited" value="R2FicmllbC5Mb3BlcztERVNLVE9QLTZMOUFPQVM7MjAyNC0wMS0zMTsiMTA6MDE6MTAgIjs0OzM1OTk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a, b" type="Integer" array="False" size=""/>
+            <output expression="&quot;qual tabuada voc&#234; quer?&quot;" newline="True"/>
+            <input variable="a"/>
+            <for variable="b" start="1" end="10" direction="inc" step="1">
+                <output expression="&quot;seu resultado da conta &quot; &amp; a &amp; &quot;x&quot; &amp; b &amp; &quot;=&quot; &amp; a*b" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

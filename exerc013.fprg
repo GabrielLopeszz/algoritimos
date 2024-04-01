@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Gabriel.Lopes"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-02-05 08:01:02 "/>
+        <attribute name="created" value="R2FicmllbC5Mb3BlcztERVNLVE9QLTZMOUFPQVM7MjAyNC0wMi0wNTsiMDc6NDk6MDIgIjszNTA5"/>
+        <attribute name="edited" value="R2FicmllbC5Mb3BlcztERVNLVE9QLTZMOUFPQVM7MjAyNC0wMi0wNTsiMDg6MDE6MDIgIjsxOzM2MDY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ano" type="Integer" array="False" size=""/>
+            <declare name="mensagem" type="String" array="False" size=""/>
+            <input variable="ano"/>
+            <if expression="(ano % 4 == 0 &amp;&amp; ano % 100 != 0) || (ano % 400 == 0)">
+                <then>
+                    <assign variable="mensagem" expression="&quot;esse ano &#233; ano bissexto&quot;"/>
+                    <output expression="mensagem" newline="True"/>
+                </then>
+                <else>
+                    <assign variable="mensagem" expression="&quot;esse ano n&#227;o &#233; ano bissexto&quot;"/>
+                    <output expression="mensagem" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

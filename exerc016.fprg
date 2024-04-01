@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Gabriel.Lopes"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-02-05 11:29:49 "/>
+        <attribute name="created" value="R2FicmllbC5Mb3BlcztERVNLVE9QLTZMOUFPQVM7MjAyNC0wMi0wNTsiMTA6MDM6MTEgIjszNDkz"/>
+        <attribute name="edited" value="R2FicmllbC5Mb3BlcztERVNLVE9QLTZMOUFPQVM7MjAyNC0wMi0wNTsiMTE6Mjk6NDkgIjsxOzM2MjE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ano, quociente1, resto, quociente2, a, b" type="Integer" array="False" size=""/>
+            <input variable="ano"/>
+            <if expression="ano &gt; 1900">
+                <then>
+                    <assign variable="ano" expression="ano % 100"/>
+                </then>
+                <else/>
+            </if>
+            <assign variable="quociente1" expression="ano/4"/>
+            <assign variable="quociente2" expression="ano/7"/>
+            <assign variable="resto" expression="ano%7"/>
+            <assign variable="a" expression="ano+resto"/>
+            <assign variable="b" expression="a-7"/>
+            <if expression="ano &gt; 2000">
+                <then>
+                    <assign variable="b" expression="b-1"/>
+                </then>
+                <else>
+                    <assign variable="b" expression="b"/>
+                </else>
+            </if>
+            <output expression="ano" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

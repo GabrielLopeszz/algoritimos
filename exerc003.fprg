@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Gabriel.Lopes"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-01-24 01:27:11 "/>
+        <attribute name="created" value="R2FicmllbC5Mb3BlcztERVNLVE9QLTZMOUFPQVM7MjAyNC0wMS0yNDsiMTA6NTM6MzYgIjszNTA1"/>
+        <attribute name="edited" value="R2FicmllbC5Mb3BlcztERVNLVE9QLTZMOUFPQVM7MjAyNC0wMS0yNDsiMDE6Mjc6MTEgIjs0OzM2MTA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a, b, c, delta" type="Integer" array="False" size=""/>
+            <declare name="x1, x2" type="Real" array="False" size=""/>
+            <input variable="b"/>
+            <input variable="a"/>
+            <input variable="c"/>
+            <assign variable="delta" expression="b^2 - 4*a*c"/>
+            <output expression="delta" newline="True"/>
+            <assign variable="x1" expression="(-b+delta^(1/2))/(2*a)"/>
+            <output expression="x1" newline="True"/>
+            <assign variable="x2" expression="(-b-delta^(1/2))/(2*a)"/>
+            <output expression="x2" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

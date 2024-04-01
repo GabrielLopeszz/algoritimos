@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Gabriel.Lopes"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-02-21 11:30:48 "/>
+        <attribute name="created" value="R2FicmllbC5Mb3BlcztOVDM1OzIwMjQtMDItMjE7IjA3OjQ4OjAyICI7MjcxMA=="/>
+        <attribute name="edited" value="R2FicmllbC5Mb3BlcztOVDM1OzIwMjQtMDItMjE7IjExOjMwOjQ4ICI7MzsyODE2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="opc, id" type="Integer" array="False" size=""/>
+            <declare name="res" type="Boolean" array="False" size=""/>
+            <declare name="aID" type="Integer" array="True" size="100"/>
+            <for variable="i" start="0" end="99" direction="inc" step="1">
+                <assign variable="aID[i]" expression="-1"/>
+            </for>
+            <declare name="aDESCR" type="String" array="True" size="100"/>
+            <declare name="aQTDE, aPRECO" type="Real" array="True" size="100"/>
+            <assign variable="opc" expression="-1"/>
+            <output expression="&quot;############   EMPRESA XYZ    ############&quot;" newline="True"/>
+            <while expression="opc!=0">
+                <output expression="&quot;1. Incluir produto&quot;" newline="True"/>
+                <output expression="&quot;2. alterar produto&quot;" newline="True"/>
+                <output expression="&quot;3. excluir produto&quot;" newline="True"/>
+                <output expression="&quot;4. listar produtos&quot;" newline="True"/>
+                <output expression="&quot;0. sair&quot;" newline="True"/>
+                <input variable="opc"/>
+                <if expression="opc&gt;=0 &amp;&amp; opc&lt;=4">
+                    <then>
+                        <if expression="opc==1">
+                            <then>
+                                <output expression="&quot;Opcao 1&quot;" newline="True"/>
+                                <assign variable="res" expression="incluir(aID,aDESCR,aQTDE,aPRECO)"/>
+                                <output expression="aDESCR[0]" newline="True"/>
+                                <if expression="res">
+                                    <then>
+                                        <output expression="&quot;produto cadastrado&quot;" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <output expression="&quot;produto n&#227;o cadastrado&quot;" newline="True"/>
+                                    </else>
+                                </if>
+                            </then>
+                            <else>
+                                <if expression="opc==2">
+                                    <then>
+                                        <output expression="&quot;Opcao 2&quot;" newline="True"/>
+                                        <input variable="id"/>
+                                        <assign variable="res" expression="alterar(id)"/>
+                                        <if expression="res">
+                                            <then>
+                                                <output expression="&quot;produto alterado&quot;" newline="True"/>
+                                            </then>
+                                            <else>
+                                                <output expression="&quot;produto n&#227;o alterado&quot;" newline="True"/>
+                                            </else>
+                                        </if>
+                                    </then>
+                                    <else>
+                                        <if expression="opc==3">
+                                            <then>
+                                                <output expression="&quot;Opcao 3&quot;" newline="True"/>
+                                                <input variable="id"/>
+                                                <assign variable="res" expression="excluir(id)"/>
+                                                <if expression="res">
+                                                    <then>
+                                                        <output expression="&quot;produto n&#227;o excluido&quot;" newline="True"/>
+                                                    </then>
+                                                    <else>
+                                                        <output expression="&quot;produto n&#227;o excluido&quot;" newline="True"/>
+                                                    </else>
+                                                </if>
+                                            </then>
+                                            <else>
+                                                <if expression="opc==4">
+                                                    <then>
+                                                        <output expression="&quot;Opcao 4&quot;" newline="True"/>
+                                                        <assign variable="res" expression="listar()"/>
+                                                        <if expression="res">
+                                                            <then/>
+                                                            <else>
+                                                                <output expression="&quot;listagem n&#227;o processada&quot;" newline="True"/>
+                                                            </else>
+                                                        </if>
+                                                    </then>
+                                                    <else/>
+                                                </if>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </then>
+                    <else>
+                        <output expression="&quot;selecione as opcoes entre 0 a 4&quot;" newline="True"/>
+                    </else>
+                </if>
+            </while>
+        </body>
+    </function>
+    <function name="alterar" type="Boolean" variable="res">
+        <parameters>
+            <parameter name="id" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="res" type="Boolean" array="False" size=""/>
+            <declare name="descricao" type="String" array="False" size=""/>
+            <declare name="qtde, preco" type="Real" array="False" size=""/>
+            <assign variable="descricao" expression="&quot;produto 001&quot;"/>
+            <assign variable="qtde" expression="30"/>
+            <assign variable="preco" expression="5.40"/>
+            <output expression="descricao&amp;&quot;-&quot;&amp;qtde&amp;&quot;-&quot;&amp;preco" newline="True"/>
+            <input variable="descricao"/>
+            <input variable="qtde"/>
+            <input variable="preco"/>
+            <assign variable="res" expression="true"/>
+        </body>
+    </function>
+    <function name="aSize" type="Integer" variable="size">
+        <parameters>
+            <parameter name="array" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="size, i" type="Integer" array="False" size=""/>
+            <assign variable="i" expression="0"/>
+            <assign variable="size" expression="0"/>
+            <while expression="array[i]=&quot;&quot;">
+                <assign variable="size" expression="size+1"/>
+                <assign variable="i" expression="i+1"/>
+            </while>
+        </body>
+    </function>
+    <function name="excluir" type="Boolean" variable="res">
+        <parameters>
+            <parameter name="id" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="res" type="Boolean" array="False" size=""/>
+            <assign variable="res" expression="true"/>
+            <declare name="descricao" type="String" array="False" size=""/>
+            <declare name="qtde, preco" type="Real" array="False" size=""/>
+            <assign variable="descricao" expression="&quot;produto 001&quot;"/>
+            <assign variable="qtde" expression="30"/>
+            <assign variable="preco" expression="5.40"/>
+            <output expression="descricao&amp;&quot;-&quot;&amp;qtde&amp;&quot;-&quot;&amp;preco" newline="True"/>
+        </body>
+    </function>
+    <function name="incluir" type="Boolean" variable="res">
+        <parameters>
+            <parameter name="aID" type="Integer" array="True"/>
+            <parameter name="aDESCR" type="String" array="True"/>
+            <parameter name="aQTDE" type="Real" array="True"/>
+            <parameter name="aPRECO" type="Real" array="True"/>
+        </parameters>
+        <body>
+            <declare name="res" type="Boolean" array="False" size=""/>
+            <declare name="id" type="Integer" array="False" size=""/>
+            <declare name="descricao" type="String" array="False" size=""/>
+            <declare name="qtde, preco" type="Real" array="False" size=""/>
+            <output expression="aSize(aID)" newline="True"/>
+            <input variable="id"/>
+            <input variable="descricao"/>
+            <input variable="qtde"/>
+            <input variable="preco"/>
+            <assign variable="aID[0]" expression="id"/>
+            <assign variable="aDESCR[0]" expression="descricao"/>
+            <assign variable="aQTDE[0]" expression="qtde"/>
+            <assign variable="aPRECO[0]" expression="preco"/>
+            <assign variable="res" expression="true"/>
+        </body>
+    </function>
+    <function name="listar" type="Boolean" variable="res">
+        <parameters/>
+        <body>
+            <declare name="res" type="Boolean" array="False" size=""/>
+            <declare name="descricao" type="String" array="False" size=""/>
+            <declare name="qtde, preco" type="Real" array="False" size=""/>
+            <assign variable="descricao" expression="&quot;produto 001&quot;"/>
+            <assign variable="qtde" expression="30"/>
+            <assign variable="preco" expression="5.40"/>
+            <output expression="descricao&amp;&quot;-&quot;&amp;qtde&amp;&quot;-&quot;&amp;preco" newline="True"/>
+            <assign variable="res" expression="true"/>
+        </body>
+    </function>
+</flowgorithm>

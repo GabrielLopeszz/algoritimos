@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Gabriel.Lopes"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-02-05 09:23:39 "/>
+        <attribute name="created" value="R2FicmllbC5Mb3BlcztERVNLVE9QLTZMOUFPQVM7MjAyNC0wMi0wNTsiMDg6MzQ6MzEgIjszNTA2"/>
+        <attribute name="edited" value="R2FicmllbC5Mb3BlcztERVNLVE9QLTZMOUFPQVM7MjAyNC0wMi0wNTsiMDk6MjM6MzkgIjsxOzM2MjE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="media, a, b, c" type="Real" array="False" size=""/>
+            <declare name="presen&#231;a" type="Integer" array="False" size=""/>
+            <declare name="mensagem" type="String" array="False" size=""/>
+            <input variable="a"/>
+            <input variable="b"/>
+            <input variable="c"/>
+            <assign variable="media" expression="(a*2 + b*3 + c*5)/10"/>
+            <output expression="media" newline="True"/>
+            <input variable="presen&#231;a"/>
+            <if expression="media &gt;= 7.0">
+                <then>
+                    <if expression="presen&#231;a &gt;=25">
+                        <then>
+                            <assign variable="mensagem" expression="&quot;voc&#234; foi aprovado&quot;"/>
+                        </then>
+                        <else>
+                            <assign variable="mensagem" expression="&quot;voc&#234; foi reprovado por falta&quot;"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <assign variable="mensagem" expression="&quot;voc&#234; foi reprovado por nota&quot;"/>
+                </else>
+            </if>
+            <output expression="mensagem" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
